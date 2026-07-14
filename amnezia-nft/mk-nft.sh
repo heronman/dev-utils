@@ -12,8 +12,8 @@ wget -O "$IPS_FILE" "$IPS_FILE_URL"
 TMP_NFT_FILE=$(mktemp)
 
 (
-echo "table inet $TABLE {"
-echo "    set $NF_MARK {"
+echo "table inet $NFT_TABLE {"
+echo "    set $NF_SET {"
 echo "        type ipv4_addr"
 echo "        flags interval"
 echo "        elements = {"
@@ -31,7 +31,7 @@ echo "    }"
 
 echo "    chain output {"
 echo "        type route hook output priority mangle;"
-echo "        ip daddr @$NF_MARK meta mark set $MARK"
+echo "        ip daddr @$NF_SET meta mark set $MARK"
 echo "    }"
 
 echo "}"
