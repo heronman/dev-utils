@@ -1,0 +1,6 @@
+IPS_FILE_URL=https://www.ipdeny.com/ipblocks/data/aggregated/ru-aggregated.zone
+IPS_FILE=${CWD:-/etc/amnezia}/ru-aggregated.zone.txt
+TABLE=bypass
+NFT_FILE=/etc/nftables/ru.nft
+NF_MARK=ru
+MARK=0x1
